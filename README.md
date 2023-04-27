@@ -1,4 +1,3 @@
-# Bearning-fault-diagnosis-based-on-machine-learning
-Machine_learning
+# RollingBearFault_Data
 
-1.Use python training code in tools
+Include resnet and seresnet training results under five training dataset.
