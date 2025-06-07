@@ -304,20 +304,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you use this work in your research, please cite:
 
 ```bibtex
-@misc{rolling_bearing_fault_diagnosis,
-  title={Rolling Bearing Fault Diagnosis using Deep Learning},
-  author={Your Name},
-  year={2025},
-  publisher={GitHub},
-  howpublished={\url{https://github.com/yourusername/RollingBearingFaultDiagnosis}}
-}
-```
-
-### Related Academic Work
-
-This project builds upon and extends the methodologies described in:
-
-```bibtex
 @article{wu2023signal,
   title={Signal-to-Image: Rolling Bearing Fault Diagnosis Using ResNet Family Deep-Learning Models},
   author={Wu, Guoqian and Ji, Xinyu and Yang, Guangyuan and Jia, Yongchao and Cao, Chengqing},
