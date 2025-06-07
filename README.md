@@ -297,18 +297,7 @@ See [SECURITY_FIXES.md](SECURITY_FIXES.md) for detailed security information.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
 
-- **Case Western Reserve University** for the bearing dataset
-- **PyTorch Team** for the deep learning framework
-- **Research Community** for open-source contributions
-- **Wu, G., Ji, X., Yang, G., Jia, Y., & Cao, C.** for their foundational work on [Signal-to-Image: Rolling Bearing Fault Diagnosis Using ResNet Family Deep-Learning Models](https://doi.org/10.3390/pr11051527)
-
-## 📞 Contact
-
-- **Author**: [Your Name]
-- **Email**: [your.email@example.com]
-- **Project Link**: [https://github.com/yourusername/RollingBearingFaultDiagnosis](https://github.com/yourusername/RollingBearingFaultDiagnosis)
 
 ## 📊 Citation
 
