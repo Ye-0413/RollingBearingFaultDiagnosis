@@ -187,7 +187,9 @@ def save_checkpoint(model,
         for name, optim in optimizer.items():
             checkpoint['optimizer'][name] = optim.state_dict()
 
-    torch.save(checkpoint,filename)
+    # Save with default pickle protocol to ensure compatibility with weights_only=True loading
+    # The default protocol is compatible with the secure weights_only unpickler
+    torch.save(checkpoint, filename)
     
 def load_checkpoint(model,
                     filename,
@@ -214,7 +216,22 @@ def load_checkpoint(model,
     """
     if not os.path.isfile(filename):
         raise FileNotFoundError(f'{filename} can not be found.')
-    checkpoint = torch.load(filename, map_location)
+    
+    # Use weights_only=True for security - only load tensor data, not arbitrary Python objects
+    # This prevents remote code execution vulnerabilities (CVE-2025-32434)
+    try:
+        checkpoint = torch.load(filename, map_location=map_location, weights_only=True)
+    except Exception as e:
+        # If weights_only=True fails (e.g., for older checkpoints with custom objects),
+        # provide clear error message about security implications
+        raise RuntimeError(
+            f"Failed to load checkpoint with weights_only=True: {e}\n"
+            f"This checkpoint may contain unsafe Python objects. "
+            f"If you trust this checkpoint source, you can manually load it with "
+            f"torch.load(filename, map_location=map_location, weights_only=False), "
+            f"but be aware this poses security risks."
+        ) from e
+    
     # OrderedDict is a subclass of dict
     if not isinstance(checkpoint, dict):
         raise RuntimeError(
