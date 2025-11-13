@@ -1,0 +1,31 @@
+{
+  "total_images": 5212,
+  "per_load": {
+    "load_0": {
+      "train": 920,
+      "test": 231,
+      "total": 1151
+    },
+    "load_1": {
+      "train": 564,
+      "test": 141,
+      "total": 705
+    },
+    "load_2": {
+      "train": 854,
+      "test": 214,
+      "total": 1068
+    },
+    "load_3": {
+      "train": 856,
+      "test": 214,
+      "total": 1070
+    },
+    "Cross_load": {
+      "train": 974,
+      "test": 244,
+      "total": 1218
+    }
+  },
+  "per_class": {}
+}
