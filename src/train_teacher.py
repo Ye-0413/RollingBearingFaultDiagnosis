@@ -115,12 +115,12 @@ class TeacherTrainer:
         
         # Create datasets
         train_dataset = BearingDataset(
-            data_path=self.args.train_data,
+            annotation_file=self.args.train_data,
             transform=train_transform
         )
         
         val_dataset = BearingDataset(
-            data_path=self.args.val_data,
+            annotation_file=self.args.val_data,
             transform=val_transform
         )
         

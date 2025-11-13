@@ -6,7 +6,11 @@ Unified interface for creating teacher and student models.
 
 import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+from pathlib import Path
+
+# Add project root to path
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
 
 import torch
 import torch.nn as nn
@@ -14,7 +18,7 @@ import torch.nn as nn
 # Import SEResNet directly from seresnet.py
 from configs.backbones.seresnet import SEResNet
 
-# Import student models
+# Import student models  
 from src.models.mobilenetv2 import mobilenet_v2
 from src.models.resnet18_light import resnet18
 
