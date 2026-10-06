@@ -1,7 +1,7 @@
 # Rolling Bearing Fault Diagnosis using Deep Learning
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.13.0-red.svg)](https://pytorch.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.14.0-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Security](https://img.shields.io/badge/Security-Dependency%20Updates-brightgreen.svg)](datas/docs/Environment_setting.md)
 [![DOI](https://img.shields.io/badge/DOI-10.3390%2Fpr11051527-blue)](https://doi.org/10.3390/pr11051527)
@@ -35,6 +35,7 @@ This project addresses the critical industrial need for automated bearing fault 
 ### Prerequisites
 
 - Python 3.10+ (Python 3.11 recommended for the pinned dependencies; see [environment setup](datas/docs/Environment_setting.md))
+- macOS binary installation: Apple Silicon with macOS 14.0+
 - CUDA-compatible GPU (recommended)
 - 8GB+ RAM
 
@@ -258,7 +259,7 @@ data_cfg = dict(
 
 Dependency versions are selected using the published security advisories:
 
-- **PyTorch 2.13.0 / torchvision 0.28.0**: Compatible pair selected from the advisory-reported patched versions
+- **PyTorch 2.14.0 / torchvision 0.29.0**: Compatible pair containing the JIT fix confirmed in the [PyTorch 2.14.0 release notes](https://github.com/pytorch/pytorch/releases/tag/v2.14.0)
 - **Pillow 12.3.0**: Patched version listed for the Pillow advisories linked in the setup guide
 - **Restricted Model Loading**: Checkpoint loading retains `weights_only=True`
 
