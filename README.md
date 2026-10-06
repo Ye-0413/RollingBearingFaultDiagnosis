@@ -1,9 +1,9 @@
 # Rolling Bearing Fault Diagnosis using Deep Learning
 
-[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.7.1-red.svg)](https://pytorch.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.14.0-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-Patched-brightgreen.svg)](SECURITY_FIXES.md)
+[![Security](https://img.shields.io/badge/Security-Dependency%20Updates-brightgreen.svg)](datas/docs/Environment_setting.md)
 [![DOI](https://img.shields.io/badge/DOI-10.3390%2Fpr11051527-blue)](https://doi.org/10.3390/pr11051527)
 
 A comprehensive deep learning framework for rolling bearing fault diagnosis using state-of-the-art computer vision techniques. This project implements multiple CNN architectures for automated classification of bearing defects from vibration signal spectrograms, building upon established research methodologies in signal-to-image conversion for fault diagnosis.
@@ -18,7 +18,7 @@ This project addresses the critical industrial need for automated bearing fault 
 - **📊 Comprehensive Evaluation**: Precision, Recall, F1-Score, Confusion Matrix analysis
 - **🎨 Visualization Tools**: Class Activation Mapping (CAM), Learning Rate curves
 - **⚡ Modular Design**: Flexible configuration system for easy experimentation
-- **🔒 Security Hardened**: Latest PyTorch with security patches applied
+- **🔒 Security**: Restricted checkpoint loading and advisory-based dependency versions
 - **📈 Data Augmentation**: Advanced augmentation pipeline for robust training
 
 ### Fault Classification Types
@@ -34,7 +34,8 @@ This project addresses the critical industrial need for automated bearing fault 
 
 ### Prerequisites
 
-- Python 3.7+
+- Python 3.10+ (Python 3.11 recommended for the pinned dependencies; see [environment setup](datas/docs/Environment_setting.md))
+- macOS binary installation: Apple Silicon with macOS 14.0+
 - CUDA-compatible GPU (recommended)
 - 8GB+ RAM
 
@@ -256,13 +257,13 @@ data_cfg = dict(
 
 ## 🔒 Security
 
-This project has been updated with the latest security patches:
+Dependency versions are selected using the published security advisories:
 
-- **PyTorch 2.7.1**: Latest secure version with CVE fixes
-- **Secure Model Loading**: `weights_only=True` for safe checkpoint loading
-- **Dependency Updates**: All packages updated to secure versions
+- **PyTorch 2.14.0 / torchvision 0.29.0**: Compatible pair containing the JIT fix confirmed in the [PyTorch 2.14.0 release notes](https://github.com/pytorch/pytorch/releases/tag/v2.14.0)
+- **Pillow 12.3.0**: Patched version listed for the Pillow advisories linked in the setup guide
+- **Restricted Model Loading**: Checkpoint loading retains `weights_only=True`
 
-See [SECURITY_FIXES.md](SECURITY_FIXES.md) for detailed security information.
+See the [environment setup guide](datas/docs/Environment_setting.md) for versions and advisory references.
 
 ## 🛠️ Development
 
